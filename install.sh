@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#make sure its run as root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+
 #add env variables to .bashrc and current session
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=/opt/devkitpro/devkitARM
